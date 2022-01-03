@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>솔브레인 무인계근대 HMI 프로그램</title>
+    <!-- HTML5 Shim and Respond.js IE11 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 11]>
+    	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    	<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    	<![endif]-->
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="">
+    <meta name="author" content="Codedthemes" />
+    <!-- Favicon icon -->
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+
+    <!-- prism css -->
+    <link rel="stylesheet" href="assets/css/plugins/prism-coy.css">
+    <!-- vendor css -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdn.metroui.org.ua/v4/css/metro-all.min.css">
+    <script src="https://cdn.metroui.org.ua/v4/js/metro.min.js"></script>
+
+    <!-- 커스터마이징 -->
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+    <!-- [ Pre-loader ] start -->
+    <div class="loader-bg">
+        <div class="loader-track">
+            <div class="loader-fill"></div>
+        </div>
+    </div>
+    <!-- [ Pre-loader ] End -->
+    <!-- [ Header ] start -->
+    <header class="navbar pcoded-header navbar-expand-lg navbar-light">
+        <div class="container">
+            <div class="header">
+                <a>
+                    <img src="img/soulbrain_logo_.png" alt="" class="logo">
+                </a>
+            </div>
+            <div class="collapse navbar-collapse">
+
+            </div>
+            <div class="row btn-page">
+                <div class="col-md-6">
+                    <button type="button" class="btn btn-primary btn-lg" name="move_before">이전</button>
+
+                </div>
+                <div class="col-md-6">
+                    <button type="button" class="btn btn-primary btn-lg" name="send_data">확인</button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- [ Header ] end -->
+
+    <!-- [ navigation menu ] start -->
+    <nav class="pcoded-navbar theme-horizontal menu-light">
+        <div class="navbar-wrapper container">
+            <div class="navbar-content sidenav-horizontal" id="layout-sidenav">
+
+            </div>
+        </div>
+    </nav>
+    <!-- [ navigation menu ] end -->
+
+    <!-- [ Main Content ] start -->
+    <div class="pcoded-main-container">
+        <div class="pcoded-wrapper container">
+            <div class="pcoded-content">
+                <div class="pcoded-inner-content">
+                    <div class="main-body">
+                        <div class="page-wrapper">
+                            <!-- [ Main Content ] start -->
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <form class="form-inline">
+                                        <div class="form-group mb-2">
+                                            <label for="staticEmail2" class="sr-only">Email</label>
+                                            <input type="text" readonly class="form-control-plaintext" id="" value="차량번호 검색">
+                                        </div>
+                                        <div class="form-group mx-sm-3 mb-2">
+                                            <label for="inputPassword2" class="sr-only">차량번호 입력</label>
+                                            <input type="text" data-role="keypad" data-key-length="4" class="form-control" id="" placeholder="">
+                                        </div>
+                                        <button id="car_num_search" type="button" class="btn  btn-primary mb-2">검색</button>
+                                    </form>
+                                </div>
+                                <div class="col-md-6">
+                                    <form class="form-inline">
+                                        <div class="form-group mb-2">
+                                            <label for="staticEmail2" class="sr-only">차량번호</label>
+                                            <input type="text" readonly class="form-control-plaintext" id="" value="차량번호">
+                                        </div>
+                                        <div class="form-group mx-sm-3 mb-2">
+                                            <label for="inputPassword2" class="sr-only">차량번호</label>
+                                            <input type="text" maxlength="4" class="form-control" id="car_num_input" placeholder="">
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="col-md-6">
+                                    <form class="form-inline">
+                                        <div class="form-group mb-2">
+                                            <label for="staticEmail2" class="sr-only">RFID카드키</label>
+                                            <input type="text" readonly class="form-control-plaintext" id="" value="RFID카드키">
+                                        </div>
+                                        <div class="form-group mx-sm-3 mb-2">
+                                            <label for="inputPassword2" class="sr-only">RFID카드키</label>
+                                            <input type="text" maxlength="4" class="form-control" id="card_key_input" placeholder="">
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="dt-responsive table-responsive">
+                                        <table id="single-select" class="table compact table-bordered nowrap text-center">
+                                            <thead>
+                                                <tr>
+                                                    <th>#</th>
+                                                    <th>차량번호</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="search_result" style="display:none">
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>31나1234</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2</td>
+                                                    <td>321허1234</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>3</td>
+                                                    <td>경기11바1234</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- [ Main Content ] end -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- [ Main Content ] end -->
+
+        <!-- Warning Section start -->
+        <!-- Older IE warning message -->
+        <!--[if lt IE 11]>
+            <div class="ie-warning">
+                <h1>Warning!!</h1>
+                <p>You are using an outdated version of Internet Explorer, please upgrade
+                   <br/>to any of the following web browsers to access this website.
+                </p>
+                <div class="iew-container">
+                    <ul class="iew-download">
+                        <li>
+                            <a href="http://www.google.com/chrome/">
+                                <img src="assets/images/browser/chrome.png" alt="Chrome">
+                                <div>Chrome</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.mozilla.org/en-US/firefox/new/">
+                                <img src="assets/images/browser/firefox.png" alt="Firefox">
+                                <div>Firefox</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://www.opera.com">
+                                <img src="assets/images/browser/opera.png" alt="Opera">
+                                <div>Opera</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.apple.com/safari/">
+                                <img src="assets/images/browser/safari.png" alt="Safari">
+                                <div>Safari</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
+                                <img src="assets/images/browser/ie.png" alt="">
+                                <div>IE (11 & above)</div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <p>Sorry for the inconvenience!</p>
+            </div>
+        <![endif]-->
+        <!-- Warning Section Ends -->
+
+        <!-- Required Js -->
+        <script src="assets/js/vendor-all.min.js"></script>
+        <script src="assets/js/plugins/bootstrap.min.js"></script>
+        <script src="assets/js/pcoded.min.js"></script>
+    	<script src="assets/js/menu-setting.min.js"></script>
+
+
+    <!-- prism Js -->
+    <script src="assets/js/plugins/prism.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            // 카드키는 임의로 고유값 지정하여 넣어둠.
+            $("#card_key_input").val('202107301749AA');
+
+            // 확인 버튼 눌렀을 때 이벤트
+            $("button[name='send_data']").click(function () {
+                if($("#car_num_input").val() == '') {
+                    alert('차량번호를 선택해주세요.');
+                    return;
+                }
+
+                if($("#card_key_input").val() == '') {
+                    alert('RFID카드를 태깅해주세요.');
+                    return;
+                }
+                alert('차량번호 카드가 등록되었습니다.');
+                $(location).attr("href", "./setting.html");
+            });
+
+            // 이전 버튼 눌렀을 때 이벤트
+            $("button[name='move_before']").click(function () {
+                $(location).attr("href", "./setting.html");
+            });
+
+            // 검색 버튼 클릭하면 결과 창 띄우기
+            $("#car_num_search").click(function() {
+                $("#search_result").css("display", "table-row-group");
+            });
+
+            // 결과 테이블에서 선택했을때 이벤트
+            $("#single-select tr").click(function(){
+                // 현재 클릭된 Row(<tr>)
+    			var tr = $(this);
+    			var td = tr.children();
+                $("#car_num_input").val(td.eq(1).text());
+            });
+        });
+    </script>
+
+
+
+    <script src="assets/js/horizontal-menu.js"></script>
+    <script>
+        (function() {
+            if ($('#layout-sidenav').hasClass('sidenav-horizontal') || window.layoutHelpers.isSmallScreen()) {
+                return;
+            }
+            try {
+                window.layoutHelpers._getSetting("Rtl")
+                window.layoutHelpers.setCollapsed(
+                    localStorage.getItem('layoutCollapsed') === 'true',
+                    false
+                );
+            } catch (e) {}
+        })();
+        $(function() {
+            $('#layout-sidenav').each(function() {
+                new SideNav(this, {
+                    orientation: $(this).hasClass('sidenav-horizontal') ? 'horizontal' : 'vertical'
+                });
+            });
+            $('body').on('click', '.layout-sidenav-toggle', function(e) {
+                e.preventDefault();
+                window.layoutHelpers.toggleCollapsed();
+                if (!window.layoutHelpers.isSmallScreen()) {
+                    try {
+                        localStorage.setItem('layoutCollapsed', String(window.layoutHelpers.isCollapsed()));
+                    } catch (e) {}
+                }
+            });
+        });
+        $(document).ready(function() {
+            $("#pcoded").pcodedmenu({
+                themelayout: 'horizontal',
+                MenuTrigger: 'hover',
+                SubMenuTrigger: 'hover',
+            });
+        });
+    </script>
+
+    <script src="assets/js/analytics.js"></script>
+
+    <!-- datatable Js -->
+    <script src="assets/js/plugins/jquery.dataTables.min.js"></script>
+    <script src="assets/js/plugins/dataTables.bootstrap4.min.js"></script>
+    <script src="assets/js/plugins/dataTables.select.min.js"></script>
+    <script src="assets/js/pages/data-select-custom.js"></script>
+
+</body>
+
+</html>

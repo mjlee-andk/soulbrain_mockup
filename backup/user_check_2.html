@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>솔브레인 무인계근대 HMI 프로그램</title>
+    <!-- HTML5 Shim and Respond.js IE11 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 11]>
+    	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    	<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    	<![endif]-->
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="">
+    <meta name="author" content="Codedthemes" />
+    <!-- Favicon icon -->
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+
+    <!-- prism css -->
+    <link rel="stylesheet" href="assets/css/plugins/prism-coy.css">
+    <!-- vendor css -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+
+
+</head>
+<body>
+    <!-- [ Pre-loader ] start -->
+    <div class="loader-bg">
+        <div class="loader-track">
+            <div class="loader-fill"></div>
+        </div>
+    </div>
+    <!-- [ Header ] start -->
+    <header class="navbar pcoded-header navbar-expand-lg navbar-light header">
+        <div class="container">
+            <div class="header">
+                <!-- <a class="mobile-menu" id="mobile-collapse" href="#!"><span></span></a> -->
+                <a href="#!" class="b-brand">
+                    <!-- ========   change your logo hear   ============ -->
+                    <!-- ========   change your logo hear   ============ -->
+                    <img src="img/soulbrain_logo.png" alt="" class="logo">
+                </a>
+                <!-- <a href="#!" class="mob-toggler">
+                    <i class="feather icon-more-vertical"></i>
+                </a> -->
+            </div>
+            <div class="collapse navbar-collapse">
+
+            </div>
+            <div class="row justify-content-between btn-page">
+                <div class="col-lg-6">
+                    <button type="button" class="btn btn-primary btn-lg" onclick="location.href = './index.html'">이전</button>
+
+                </div>
+                <div class="col-lg text-md-right">
+                    <button type="button" class="btn btn-primary btn-lg" name="next">다음</button>
+
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- [ Header ] end -->
+
+    <!-- [ Main Content ] start -->
+    <div class="pcoded-navbar theme-horizontal menu-light pcoded-main-container">
+        <div class="pcoded-wrapper container">
+            <div class="pcoded-content">
+                <div class="pcoded-inner-content">
+                    <div class="main-body">
+                        <div class="page-wrapper">
+                            <div class="page-header">
+                                <div class="page-block">
+                                    <div class="row align-items-center">
+                                        <div class="col-lg-12">
+                                            <!-- <div class="page-header-title">
+                                                <h4 class="m-b-10">차량번호 입력</h4>
+                                            </div> -->
+                                            <!-- <ul class="breadcrumb">
+                                                <li class="breadcrumb-item"><a href="index.html"><i class="feather icon-home"></i></a></li>
+                                                <li class="breadcrumb-item"><a href="#!">Page Layout</a></li>
+                                                <li class="breadcrumb-item"><a href="#!">Horizontal Layout 2</a></li>
+                                            </ul> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- [ Main Content ] start -->
+                            <div class="row">
+                                <div class="col-lg">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h5>차량번호/샷시번호/Container No.</h5>
+                                            <div>
+                                                <h5>RFID 카드를 태깅하거나 키인으로 정보를 직접 입력해주세요.</h5>
+                                            </div>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="bt-wizard" id="besicwizard">
+                                                <!-- <ul class="nav nav-pills nav-fill mb-3">
+                                                    <li class="nav-item"><a href="#b-w-tab1" class="nav-link" data-toggle="tab"></a></li>
+                                                    <li class="nav-item"><a href="#b-w-tab2" class="nav-link" data-toggle="tab"></a></li>
+                                                    <li class="nav-item"><a href="#b-w-tab3" class="nav-link" data-toggle="tab"></a></li>
+                                                </ul> -->
+                                                <div class="tab-content">
+                                                    <div class="tab-pane active show" id="b-w-tab1">
+                                                        <form>
+                                                            <div class="form-group row">
+                                                                <label for="b-t-name" class="col-sm-3 col-form-label">차량번호</label>
+                                                                <div class="col-sm-9">
+                                                                    <input type="text" class="form-control" id="car_num" placeholder="">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label for="b-t-email" class="col-sm-3 col-form-label">샷시번호</label>
+                                                                <div class="col-sm-9">
+                                                                    <input type="text" class="form-control" id="shotsy_num" placeholder="">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label for="b-t-pwd" class="col-sm-3 col-form-label">Container No.</label>
+                                                                <div class="col-sm-9">
+                                                                    <input type="text" class="form-control" id="con_num" placeholder="">
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                    <!-- <div class="tab-pane" id="b-w-tab2">
+                                                        <form>
+                                                            <div class="form-group row">
+                                                                <label for="b-t-sate" class="col-sm-3 col-form-label">State</label>
+                                                                <div class="col-sm-9">
+                                                                    <select class="form-control" id="b-t-sate">
+                                                                        <option>Select State</option>
+                                                                        <option>2</option>
+                                                                        <option>3</option>
+                                                                        <option>4</option>
+                                                                        <option>5</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <label for="b-t-address" class="col-sm-3 col-form-label">Address</label>
+                                                                <div class="col-sm-9">
+                                                                    <textarea class="form-control" id="b-t-address" rows="3" spellcheck="false"></textarea>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                    <div class="tab-pane" id="b-w-tab3">
+                                                        <form class="text-center">
+                                                            <i class="feather icon-check-circle display-3 text-success"></i>
+                                                            <h5 class="mt-3">Registration Done! . .</h5>
+                                                            <p>Lorem Ipsum is simply dummy text of the printing</p>
+                                                            <div class="custom-control custom-checkbox mb-3">
+                                                                <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                                                <label class="custom-control-label" for="customCheck1">Subscribe Newslatter</label>
+                                                            </div>
+                                                        </form>
+                                                    </div> -->
+                                                    <!-- <div class="row justify-content-between btn-page">
+                                                        <div class="col-lg-6">
+                                                            <button type="button" class="btn btn-primary btn-lg" onclick="location.href = './index.html'">이전</button>
+
+                                                        </div>
+                                                        <div class="col-lg text-md-right">
+                                                            <button type="button" class="btn btn-primary btn-lg" onclick="location.href = './scale.html'">다음</button>
+
+                                                        </div>
+                                                    </div> -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- [ Main Content ] end -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- [ Main Content ] end -->
+
+        <!-- Warning Section start -->
+        <!-- Older IE warning message -->
+        <!--[if lt IE 11]>
+            <div class="ie-warning">
+                <h1>Warning!!</h1>
+                <p>You are using an outdated version of Internet Explorer, please upgrade
+                   <br/>to any of the following web browsers to access this website.
+                </p>
+                <div class="iew-container">
+                    <ul class="iew-download">
+                        <li>
+                            <a href="http://www.google.com/chrome/">
+                                <img src="assets/images/browser/chrome.png" alt="Chrome">
+                                <div>Chrome</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.mozilla.org/en-US/firefox/new/">
+                                <img src="assets/images/browser/firefox.png" alt="Firefox">
+                                <div>Firefox</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://www.opera.com">
+                                <img src="assets/images/browser/opera.png" alt="Opera">
+                                <div>Opera</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.apple.com/safari/">
+                                <img src="assets/images/browser/safari.png" alt="Safari">
+                                <div>Safari</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
+                                <img src="assets/images/browser/ie.png" alt="">
+                                <div>IE (11 & above)</div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <p>Sorry for the inconvenience!</p>
+            </div>
+        <![endif]-->
+        <!-- Warning Section Ends -->
+
+        <!-- Required Js -->
+        <script src="assets/js/vendor-all.min.js"></script>
+        <script src="assets/js/plugins/bootstrap.min.js"></script>
+        <script src="assets/js/pcoded.min.js"></script>
+    	<script src="assets/js/menu-setting.min.js"></script>
+
+
+    <!-- prism Js -->
+    <script src="assets/js/plugins/prism.js"></script>
+
+
+    <script>
+        $(document).ready(function () {
+            $("button[name='next']").click(function () {
+                if($('#car_num').val() == '' && $('#shotsy_num').val() == '' && $('#con_num').val() == '') {
+                    alert('차량번호/샷시번호/Container No. 중 최소 1개를 입력해주세요.');
+                    return;
+                }
+
+                if($('#car_num').val() == '1234') {
+                    alert('1차 계량 기록이 없습니다. 입력한 정보를 확인해주세요.');
+                    return;
+                }
+
+                var car_num;
+                var shotsy_num;
+                var con_num;
+
+                car_num = $("#car_num").val();
+                shotsy_num = $("#shotsy_num").val();
+                con_num = $("#con_num").val();
+
+                var url = './scale_2.html?car_num=' + car_num + '&shotsy_num=' + shotsy_num + '&con_num=' + con_num;
+                $(location).attr("href", url);
+
+                // $(location).attr("href", "./scale_2.html");
+            });
+        });
+    </script>
+
+
+    <script src="assets/js/horizontal-menu.js"></script>
+    <script>
+        (function() {
+            if ($('#layout-sidenav').hasClass('sidenav-horizontal') || window.layoutHelpers.isSmallScreen()) {
+                return;
+            }
+            try {
+                window.layoutHelpers._getSetting("Rtl")
+                window.layoutHelpers.setCollapsed(
+                    localStorage.getItem('layoutCollapsed') === 'true',
+                    false
+                );
+            } catch (e) {}
+        })();
+        $(function() {
+            $('#layout-sidenav').each(function() {
+                new SideNav(this, {
+                    orientation: $(this).hasClass('sidenav-horizontal') ? 'horizontal' : 'vertical'
+                });
+            });
+            $('body').on('click', '.layout-sidenav-toggle', function(e) {
+                e.preventDefault();
+                window.layoutHelpers.toggleCollapsed();
+                if (!window.layoutHelpers.isSmallScreen()) {
+                    try {
+                        localStorage.setItem('layoutCollapsed', String(window.layoutHelpers.isCollapsed()));
+                    } catch (e) {}
+                }
+            });
+        });
+        $(document).ready(function() {
+            $("#pcoded").pcodedmenu({
+                themelayout: 'horizontal',
+                MenuTrigger: 'hover',
+                SubMenuTrigger: 'hover',
+            });
+        });
+    </script>
+
+    <script src="assets/js/analytics.js"></script>
+
+</body>
+
+</html>
